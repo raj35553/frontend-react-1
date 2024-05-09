@@ -8,3 +8,8 @@ git status
 git add .
 
 git commit -m "First Commit"
+
+
+# Install Dependency (Npm VS Yarn)
+npm install parcel -dev
+npx parcel index.html
