@@ -1,6 +1,14 @@
 import React from "react";
 
 const Footer = () => {
-  return <div id="footer">Footer</div>;
+  function clickMe() {
+    // console.log(">>>>>>>>>> mohit");
+  }
+
+  return (
+    <div id="footer">
+      Footer<button onClick={clickMe}>Click Me Now Dev</button>
+    </div>
+  );
 };
 export default Footer;

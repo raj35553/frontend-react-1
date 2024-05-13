@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/app.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div>
         <Header />
         <div>
-          <img src="../public/react.jpeg" />
+          <Home />
         </div>
         <Footer />
       </div>
