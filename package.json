@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Web application - React | Parcel",
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "set PORT=3000 && react-scripts start",
     "test": "jest"
   },
   "repository": {
@@ -33,5 +33,17 @@
     "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0",
     "process": "^0.11.10"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
