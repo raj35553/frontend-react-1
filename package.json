@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Web application - React | Parcel",
   "scripts": {
-    "start": "set PORT=3000 && react-scripts start",
+    "start": "parcel public/index.html",
     "test": "jest"
   },
   "repository": {
