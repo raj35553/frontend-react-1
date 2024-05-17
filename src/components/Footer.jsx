@@ -1,17 +1,18 @@
 import React from "react";
-
+import LogoFooter from '../images/logofooter.png';
 
   function Footer() {
     // console.log(">>>>>>>>>> mohit");
  
 
   return (
-    <footer id="footer">
+    <footer id="footer" className="mt-4">
     <div className="container-fluid" >
           <div className="container">
             
-                <div className="footer-one">
-                  Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow
+                <div className="footer-one footer-one d-flex justify-content-between">
+                  <div className="">Got a show, event, activity or a great experience? Partner with us & get listed on BookMyShow</div>
+                  <div className=""><button type="button" class="btn btn-danger btn-sm">Contact Us</button></div>
                 </div>
           </div>
     </div>
@@ -37,11 +38,12 @@ import React from "react";
           </div>
       </div>
       <div className="container-fluid">
-          <div className="container">
+          
               <div className="footer-three d-flex justify-content-around">
+                <img src={LogoFooter} alt={"LogoFooter"}/>
                
               </div>
-          </div>
+        
           
         </div>
       

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Headertwo() {
   return <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,10 +12,10 @@ function Headertwo() {
     
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Movies</a>
+          <Link to={"/movies"} className="nav-link">Movies</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Stream</a>
+          <Link to={"/stream"} className="nav-link">Stream</Link>
         </li>
        
         <li class="nav-item">
