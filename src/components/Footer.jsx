@@ -6,7 +6,7 @@ import React from "react";
  
 
   return (
-    <footer id="footer">
+    <footer id="footer" class="mt-4">
     <div className="container-fluid" >
           <div className="container">
             

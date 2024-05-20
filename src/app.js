@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import MainBanner from "./components/MainBanner";
 
+import RecomandMovie from "./components/RecomandMovie";
+
 class App extends Component {
   render() {
     return (
@@ -17,6 +19,7 @@ class App extends Component {
         <MainBanner />
         <div>
           <Home />
+          <RecomandMovie />
         </div>
         <Footer />
       </div>
