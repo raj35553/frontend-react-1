@@ -15,6 +15,9 @@ function Headertwo() {
           <Link to={"/movies"} className="nav-link">Movies</Link>
         </li>
         <li class="nav-item">
+          <Link to={"/ToDo"} className="nav-link">TODo</Link>
+        </li>
+        <li class="nav-item">
           <Link to={"/stream"} className="nav-link">Stream</Link>
         </li>
        

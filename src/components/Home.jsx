@@ -1,12 +1,9 @@
-import React from "react";
-import {useState} from "react";
+import React from 'react'
 
 const Home = () => {
-  const [text, settext] = useState("");
-  console.log("text:", text);
-  return <div><p>HOme Page TExt</p>
-    <input  type="text" value={text} onChange={(e) => settext(e.target.value)} />
-  </div>;
-};
+  return (
+    <div>Home</div>
+  )
+}
 
-export default Home;
+export default Home
