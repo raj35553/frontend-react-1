@@ -12,12 +12,15 @@ const AddEdit = () => {
 
   const handleChange =(e) => {
 
+    e.preventDefault();
+
     const {value} = e.target;
     let isDisabled = true;
     if (value !== "") {
       isDisabled = false;
     }
-
+   
+   
     // set input value
     setItem(value);
     setIsButtonDisabled(isDisabled);
@@ -34,10 +37,11 @@ const AddEdit = () => {
       setArray([...array, item]);
       arrayItem.push(item);
       alert('Add successfully');
-    } else {
-      setErrormsg(true);
+     } else {
+        setErrormsg(true)
     }
 
+    
     setArray(arrayItem);
     // clear input value
     setItem("");
@@ -57,8 +61,6 @@ const AddEdit = () => {
   const editNode = (index) => {
     const arrayItem = array[index];
     console.log(">>>>>>>> arrayItem", arrayItem);
-    
-    
     setItem(arrayItem);
     setEditIndex(index);
     setIsEdit(true);
@@ -71,7 +73,7 @@ const AddEdit = () => {
       <button disabled={isButtonDisabled} onClick={() => addEditItem()} className='btn btn-primary mt-2 mb-2'>
         {isEdit ? "Update" : "Submit"}
       </button>
-      {errormsg ? <div>Duplicate value or empty value</div> : <></>}
+    {errormsg && item.length<=0? <label>Duplicate value or Please enter Value</label>: ""}
       <table className='table table-bordered'>
         <tr>
           <th>S.no</th>
