@@ -71,7 +71,7 @@ const AddEdit = () => {
       <button disabled={isButtonDisabled} onClick={() => addEditItem()} className='btn btn-primary mt-2 mb-2'>
         {isEdit ? "Update" : "Submit"}
       </button>
-      {errormsg ? <div>Duplicate value or empty value</div> : <></>}
+      {errormsg ? <div>Duplicate value or empty value</div> : <>Successfully added</>}
       <table className='table table-bordered'>
         <tr>
           <th>S.no</th>
