@@ -1,6 +1,7 @@
 import React from "react";
 import LogoFooter from '../images/logofooter.png';
 
+
   function Footer() {
     // console.log(">>>>>>>>>> mohit");
  

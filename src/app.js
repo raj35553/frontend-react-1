@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound";
 import RecomandMovie from "./components/RecomandMovie";
 import ToDo from "./components/ToDo";
 
+
 class App extends Component {
   render() {
     return (
@@ -38,6 +39,7 @@ class App extends Component {
           <Movies name="God" />
         </div>
         <Footer />
+        
       </div>
     );
   }
