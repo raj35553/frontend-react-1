@@ -1,8 +1,8 @@
 import React from 'react'
-
+import MainBanner from "./MainBanner";
 const Home = () => {
   return (
-    <div>Home</div>
+    <div><MainBanner /></div>
   )
 }
 

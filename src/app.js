@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Headertwo from "./components/Headertwo";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import MainBanner from "./components/MainBanner";
+
 import RecomandMovie from "./components/Recomand-movie";
 import Stream from "./components/Stream";
 import Movies from "./components/Movies";
@@ -32,11 +32,11 @@ class App extends Component {
             </Routes>
           </Router>
 
-        <MainBanner />
-        <Home />
+        
+      
         <div>
           <RecomandMovie />
-          <Movies name="God" />
+        
         </div>
         <Footer />
         

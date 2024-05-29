@@ -11,7 +11,19 @@ const AddEdit = () => {
   const [array, setArray] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
-  
+
+
+  let retString=localStorage.getItem("setArray");
+  let resultArra="";
+
+
+  if(retString!= undefined || retString != null)
+    {
+
+      let restArray= JSON.parse(retString);
+      resultArra=Object.values(restArray);
+
+    }
 
   const notify = (isSuccess) => {
     if (isSuccess){
@@ -53,7 +65,7 @@ const AddEdit = () => {
   
   const addEditItem = () => {
     
-    const arrayItem = [...array];
+    const arrayItem = [...resultArra];
     console.log(arrayItem);
    
    
@@ -61,7 +73,7 @@ const AddEdit = () => {
       arrayItem[editIndex] = item;
       setIsEdit(false);
     } else if (item && !array.includes(item)) {
-      setArray([...array, item]);
+      setArray([...resultArra, item]);
       arrayItem.push(item);
       alert('Add successfully');
       notify(true);
@@ -86,7 +98,7 @@ const AddEdit = () => {
 
 
   const deleteNode = (index) => {
-    const arrayItem = [...array]; // Shallow Copy (... => spread operator)
+    const arrayItem = [...resultArra]; // Shallow Copy (... => spread operator)
     const notifyDelete = () =>  {toast.success("Successfully delete");}
     arrayItem.splice(index, 1);
     setArray(arrayItem);
@@ -123,9 +135,9 @@ const AddEdit = () => {
         
          
         </tr>
-        {array.length === 0 && <tr>No Task Found!</tr>}
-        {array &&
-          array.map((todo, index) => (
+        {resultArra.length === 0 && <tr>No Task Found!</tr>}
+        {resultArra &&
+          resultArra.map((todo, index) => (
             <tr>
                <td>{index}</td>
               <td>{todo}</td>
