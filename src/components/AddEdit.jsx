@@ -5,15 +5,13 @@ import React, {useState} from 'react';
 const AddEdit = () => {
 
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const counter = 1;
-  const [item, setItem] = useState("");
-  const [Desc, setDesc] = useState("");
-  const [array, setArray] = useState([]);
+  const [item, setItem] = useState();
+  const [array, setArray] = useState([]);   //setArray means perform change 
   const [isEdit, setIsEdit] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
 
 
-  let retString=localStorage.getItem("setArray");
+  let retString=localStorage.getItem("Y");
   let resultArra="";
 
 
@@ -37,30 +35,19 @@ const AddEdit = () => {
 
   const handleChange =(e) => {
     e.preventDefault();
-
+  
     const {value} = e.target;
     let isDisabled = true;
     if (value !== "") {
       isDisabled = false;
     }
    
+    
     // set input value
-    setItem(value);
+     setItem(value);
     setIsButtonDisabled(isDisabled);
   }
 
-  const handleChangeDesc =(e) => {
-    e.preventDefault();
-
-    const {value} = e.target;
-    let isDisabled = true;
-    if (value !== "") {
-      isDisabled = false;
-    }
-    // set Desc value
-    setDesc(value);
-    setIsButtonDisabled(isDisabled);
-  }
 
   
   const addEditItem = () => {
@@ -73,7 +60,6 @@ const AddEdit = () => {
       arrayItem[editIndex] = item;
       setIsEdit(false);
     } else if (item && !array.includes(item)) {
-      setArray([...resultArra, item]);
       arrayItem.push(item);
       alert('Add successfully');
       notify(true);
@@ -84,13 +70,9 @@ const AddEdit = () => {
     }
 
     setArray(arrayItem);
-    
-    const jsonConverted = JSON.stringify(arrayItem);
+  
     // set data into local storage
-    localStorage.setItem("setArray", jsonConverted);
-
-
-    // const ListArray = JSON.parse(arrayItem);
+    localStorage.setItem("Y", JSON.stringify(arrayItem));
     // clear input value
     setItem("");
   };
@@ -99,10 +81,13 @@ const AddEdit = () => {
 
   const deleteNode = (index) => {
     const arrayItem = [...resultArra]; // Shallow Copy (... => spread operator)
-    const notifyDelete = () =>  {toast.success("Successfully delete");}
     arrayItem.splice(index, 1);
     setArray(arrayItem);
+    localStorage.setItem("Y", JSON.stringify(arrayItem));
+    const notifyDelete = () =>  {toast.success("Successfully delete");}
     notifyDelete(true);
+
+    
   };
 
 
@@ -120,11 +105,11 @@ const AddEdit = () => {
     <div className='container'>
       <h1>ToDo</h1>
 
-      <input type="text" id="item" value={item} onChange={handleChange} className='form-control mb-3'/>
-      <textarea type="text" value={Desc} onChange={handleChangeDesc} className='form-control'/>
+      <input type="text"  value={item} onChange={handleChange} className='form-control mb-3'/>
       <button disabled={isButtonDisabled} onClick={() => addEditItem()} className='btn btn-primary mt-2 mb-2'>
         {isEdit ? "Update" : "Submit"}
       </button>
+  
       <ToastContainer />
     {/* {errormsg && item.length<=0? <label>Duplicate value or Please enter Value</label>: ""} */}
       <table className='table table-bordered'>

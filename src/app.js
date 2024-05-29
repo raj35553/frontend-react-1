@@ -8,11 +8,10 @@ import Headertwo from "./components/Headertwo";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 
-import RecomandMovie from "./components/Recomand-movie";
+
 import Stream from "./components/Stream";
 import Movies from "./components/Movies";
 import NotFound from "./components/NotFound";
-import RecomandMovie from "./components/RecomandMovie";
 import ToDo from "./components/ToDo";
 
 
@@ -32,14 +31,11 @@ class App extends Component {
             </Routes>
           </Router>
 
+      <div>
+          
         
-      
-        <div>
-          <RecomandMovie />
-        
-        </div>
+      </div>
         <Footer />
-        
       </div>
     );
   }

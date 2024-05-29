@@ -2,52 +2,52 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Headertwo() {
-  return <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+  return <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container">
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+    <div className="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
     
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
+      <ul className="navbar-nav mb-2 mb-lg-0">
+        <li className="nav-item">
           <Link to={"/movies"} className="nav-link">Movies</Link>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link to={"/ToDo"} className="nav-link">TODo</Link>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <Link to={"/stream"} className="nav-link">Stream</Link>
         </li>
        
-        <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Events</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Plays</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Plays</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sports</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Sports</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Activites</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Activites</a>
         </li>
       </ul>
 
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">ListYourShow</a>
+      <ul className="navbar-nav mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link" href="#">ListYourShow</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Corporates</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Corporates</a>
         </li>
        
-        <li class="nav-item">
-          <a class="nav-link" href="#">Offers</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Offers</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Gift cards</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Gift cards</a>
         </li>
        
       </ul>

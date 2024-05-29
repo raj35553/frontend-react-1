@@ -1,8 +1,12 @@
 import React from 'react'
 import MainBanner from "./MainBanner";
+import RecomandMovie from "./Recomand-movie";
 const Home = () => {
   return (
-    <div><MainBanner /></div>
+    <div>
+      <MainBanner />
+      <RecomandMovie />
+      </div>
   )
 }
 
