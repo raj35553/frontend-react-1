@@ -6,7 +6,7 @@ const MainBanner = () => {
       <div className="text-center mt-3"><img src={Banner} alt={"Banner"}/></div>
 
           <div className="">
-                  <button onClick={() => {
+                  {/* <button onClick={() => {
                 localStorage.setItem('arr', JSON.stringify([1, 2 , 3 , 4]))
                 localStorage.setItem('obj', JSON.stringify({Name: 'RAJ', Dept: 'IT'}))
 
@@ -17,7 +17,7 @@ const MainBanner = () => {
               const arrr = localStorage.getItem('arr')
               console.log(JSON.parse(arrr));
               console.log( ">>>>> simple show", arrr);
-                  }}>Get Value </button>
+                  }}>Get Value </button> */}
 
                  
 
