@@ -1,6 +1,6 @@
 import React from 'react'
 import MainBanner from "./MainBanner";
-import RecomandMovie from "./Recomand-movie";
+import RecomandMovie from "./ApiGitHub";
 const Home = () => {
   return (
     <div>
