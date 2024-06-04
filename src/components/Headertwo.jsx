@@ -20,6 +20,13 @@ function Headertwo() {
         <li className="nav-item">
           <Link to={"/stream"} className="nav-link">Stream</Link>
         </li>
+        <li className="nav-item">
+          <Link to={"/AddBlog"} className="nav-link">Add Blog</Link>
+        </li>
+       
+        <li className="nav-item">
+          <Link to={"/Blogs"} className="nav-link">Blog</Link>
+        </li>
        
         <li className="nav-item">
           <a className="nav-link" href="#">Events</a>
