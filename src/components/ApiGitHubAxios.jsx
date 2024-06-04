@@ -6,23 +6,19 @@ const ApiGitHubAxios = () => {
   const [datalist, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  async function fetchGitArt() {   // async function 
-    try {
-      const response = await axios.get(ApiName);
-      setData(response.data.data);
-    } catch(error) {
-          console.log("------->>> error fetching data");
-          
-    }finally {
-      // loading
-      setLoading(false);
-    }
-
-  }
-
-    useEffect(function () {
+    useEffect(async function () {
       // invoke/call function
-      fetchGitArt();
+      try {
+        const response = await axios.get(ApiName);
+        setData(response.data.data);
+      } catch(error) {
+            console.log("------->>> error fetching data");
+            
+      }finally {
+        // loading
+        setLoading(false);
+      }
+      console.log('Ran')
     }, []);   // Empty dependency array means this effect runs once on mount/load
   
 
@@ -47,10 +43,10 @@ const ApiGitHubAxios = () => {
             datalist.map((obj, key) => {
               return (
               <tr key={key}>
-                <td>Id: {obj.id}</td>
-                <td>Api Model: {obj.api_model}</td>
-                <td>Title: {obj.title}</td>
-                <td>Artist Title: {obj.artist_title}</td>
+                <td>{obj.id}</td>
+                <td>{obj.api_model}</td>
+                <td>{obj.title}</td>
+                <td>{obj.artist_title}</td>
               </tr>
       );
     })
