@@ -8,8 +8,8 @@ const Blogs = () => {
 
   async function fetchBlog() {
     try {
-      const response = await axios.get(getBlogsAPI);
-      setDataList(response.dataList);
+      const response = await axios.get("http://localhost:3000/blogs");
+      setDataList(response.data);
     } catch (error) {
       console.log(">>>> error while fetching data", error);
     } finally {
@@ -19,7 +19,7 @@ const Blogs = () => {
   }
 
   useEffect(function () {
-    // invode/call function
+    // invoke/call function
     fetchBlog();
   }, []); // Empty dependency array means this effect runs once on mount/load
 
@@ -44,7 +44,7 @@ const Blogs = () => {
             {loading ? (
               <div className="text-center">loading Data...</div>
             ) : (
-              dataList.map((obj) => {
+              dataList.map((obj , key) => {
                 return (
                   <tr scope="row">
                     <td>{obj.id}</td>

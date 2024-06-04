@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
-import { addPostAPI } from "../Api";
+//import { addPostAPI } from "../Api";
 const AddBlog = () => {
 
   const [title, setTitle] = useState("");
-  const [Description, setDescription] = useState("");
+  const [description, setDescription] = useState("");
   const [isButtonDisabled, setisButtonDisabled] = useState(true);
 
 
 
   useEffect (() => {
-   if(title !== "" && Description !== ""){
+   if(title !== "" && description !== ""){
      setisButtonDisabled(false);
    }
-  },[title, Description]);
+  },[title, description]);
 
    // handle or set state on change input value
    const handleChange = (e) => {
@@ -22,7 +22,7 @@ const AddBlog = () => {
 
     if (name === "title") {
       setTitle(value);
-    } else if (name === "Description") {
+    } else if (name === "description") {
       setDescription(value);
     }
   };
@@ -34,11 +34,11 @@ const AddBlog = () => {
         // Payload or request params to add new blog
         const payload = {
           title,
-          Description,
+          description,
         };
   
         // Api call to add new blog
-        const response = await axios.post(addPostAPI, payload);
+        const response = await axios.post("http://localhost:3000/blogs", payload);
   
         console.log(">>> add blog response", response);
       } catch (error) {
@@ -56,7 +56,7 @@ const AddBlog = () => {
                     <input type="text" className='form-control' name="title" onChange={handleChange}  />              
                 </div>
                 <div class="mb-3">
-                    <textarea type="text" className='form-control' name="Description" onChange={handleChange} />              
+                    <textarea type="text" className='form-control' name="description" onChange={handleChange} />              
                 </div>
                 <Button onClick={addBlog} disabled={isButtonDisabled} className="btn btn-primary btn-sm">
                 Submit
