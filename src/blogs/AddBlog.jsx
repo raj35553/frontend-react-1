@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 //import { addPostAPI } from "../Api";
 const AddBlog = () => {
-
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isButtonDisabled, setisButtonDisabled] = useState(true);
@@ -32,14 +33,19 @@ const AddBlog = () => {
     const addBlog = async () => {
       try {
         // Payload or request params to add new blog
+        const datetime = new Date()
         const payload = {
           title,
           description,
+          datetime
         };
   
         // Api call to add new blog
         const response = await axios.post("http://localhost:3000/blogs", payload);
-  
+
+        if (response){
+          navigate("/Blogs");  // when click on submit button moves on BLOGs List page
+        }
         console.log(">>> add blog response", response);
       } catch (error) {
         console.log("Error while adding blog", error);

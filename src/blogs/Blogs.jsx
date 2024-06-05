@@ -9,7 +9,17 @@ const Blogs = () => {
   async function fetchBlog() {
     try {
       const response = await axios.get("http://localhost:3000/blogs");
-      setDataList(response.data);
+      let sortedData = response.data.map(item => {
+        // Check if the key exists and is a string
+        return {
+          ...item,
+          datetime: new Date(item.datetime)
+        }
+      });
+
+      sortedData = sortedData.sort((a, b) => b.datetime - a.datetime);
+      console.log(sortedData);
+      setDataList(sortedData);
     } catch (error) {
       console.log(">>>> error while fetching data", error);
     } finally {
@@ -50,7 +60,7 @@ const Blogs = () => {
                     <td>{obj.id}</td>
                     <td>{obj.title}</td>
                     <td>{obj.description}</td>
-                    <td>Date Time</td>
+                    <td>{obj.datetime.toString()}</td>
                     <td>
                       <button>Edit</button>
                       <button className="ms-1">Delete</button>
