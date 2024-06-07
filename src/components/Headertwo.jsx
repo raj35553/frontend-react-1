@@ -27,6 +27,10 @@ function Headertwo() {
         <li className="nav-item">
           <Link to={"/Blogs"} className="nav-link">Blog</Link>
         </li>
+
+        <li className="nav-item">
+          <Link to={"/Contact"} className="nav-link">Contact</Link>
+        </li>
        
         <li className="nav-item">
           <a className="nav-link" href="#">Events</a>

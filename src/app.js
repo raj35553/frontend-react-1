@@ -8,7 +8,7 @@ import Headertwo from "./components/Headertwo";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 
-
+import Contact from "./components/Contact";
 import Stream from "./components/Stream";
 import Movies from "./components/Movies";
 import NotFound from "./components/NotFound";
@@ -33,10 +33,11 @@ class App extends Component {
                   <Route path="/stream" element={<Stream />} />
                   <Route path="/AddBlog" element={<AddBlog />} />
                   <Route path="/Blogs" element={<Blogs />} />
+                  <Route path="/Contact" element={<Contact />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
-
+          
             <Footer />
       
       </div>

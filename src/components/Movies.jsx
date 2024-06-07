@@ -1,6 +1,8 @@
 import React from 'react'
 import RecomandMovie from "./RecomandMovie";
 import ApiGitHubAxios from "./ApiGitHubAxios";
+
+import UseRefExample from "./UseRefExample";
 const Movies = (props) => {
 
   return (
@@ -8,6 +10,7 @@ const Movies = (props) => {
       <div>Movies list here : {props.name}</div>
       <RecomandMovie />
       <ApiGitHubAxios />
+      <UseRefExample />
     </div>
   )
 }
