@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createContext } from "react";
 import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
@@ -15,7 +15,9 @@ import NotFound from "./components/NotFound";
 import ToDo from "./components/ToDo";
 import Blogs from "./blogs/Blogs";
 import AddBlog from "./blogs/AddBlog";
-// import { ThemeProvider } from "./context/ThemeContext";
+import  ChildC  from "./context/ChildC";
+
+
 
 class App extends Component {
   render() {
@@ -34,10 +36,11 @@ class App extends Component {
                   <Route path="/AddBlog" element={<AddBlog />} />
                   <Route path="/Blogs" element={<Blogs />} />
                   <Route path="/Contact" element={<Contact />} />
+                  <Route path="/ChildC" element={<ChildC />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
-          
+      
             <Footer />
       
       </div>
