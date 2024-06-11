@@ -33,10 +33,6 @@ function Headertwo() {
         </li>
 
         <li className="nav-item">
-          <Link to={"/ChildC"} className="nav-link">ChildC</Link>
-        </li>
-       
-        <li className="nav-item">
           <a className="nav-link" href="#">Events</a>
         </li>
         <li className="nav-item">

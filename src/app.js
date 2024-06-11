@@ -15,7 +15,6 @@ import NotFound from "./components/NotFound";
 import ToDo from "./components/ToDo";
 import Blogs from "./blogs/Blogs";
 import AddBlog from "./blogs/AddBlog";
-import  ChildC  from "./context/ChildC";
 
 
 
@@ -36,7 +35,6 @@ class App extends Component {
                   <Route path="/AddBlog" element={<AddBlog />} />
                   <Route path="/Blogs" element={<Blogs />} />
                   <Route path="/Contact" element={<Contact />} />
-                  <Route path="/ChildC" element={<ChildC />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>

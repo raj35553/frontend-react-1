@@ -1,6 +1,7 @@
 //UseState ka use
 
 import React, { useState, createContext } from 'react';
+import  ChildC  from "../context/ChildC";
 const DataContext = createContext();
 const Stream = () => {
   const AutherName = "RAJ KUMAR";
@@ -12,7 +13,7 @@ const Stream = () => {
       <button className="btn btn-primary" style={{ marginTop: '50px' }} onClick={handleClick}>Click Here</button>
       <p>{Counter}</p>
       <DataContext.Provider value={AutherName}>
-
+        <ChildC />
       </DataContext.Provider>
 
     </div>
