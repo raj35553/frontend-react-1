@@ -15,7 +15,7 @@ import NotFound from "./components/NotFound";
 import ToDo from "./components/ToDo";
 import Blogs from "./blogs/Blogs";
 import AddBlog from "./blogs/AddBlog";
-
+import MemoCheck from "./context/MemoCheck";
 
 
 class App extends Component {
@@ -38,7 +38,7 @@ class App extends Component {
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
-      
+             <MemoCheck />
             <Footer />
       
       </div>
