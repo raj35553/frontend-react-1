@@ -16,7 +16,7 @@ import ToDo from "./components/ToDo";
 import Blogs from "./blogs/Blogs";
 import AddBlog from "./blogs/AddBlog";
 import MemoCheck from "./context/MemoCheck";
-
+import Signup from "./components/screens/Signup";
 
 class App extends Component {
   render() {
@@ -35,6 +35,7 @@ class App extends Component {
                   <Route path="/AddBlog" element={<AddBlog />} />
                   <Route path="/Blogs" element={<Blogs />} />
                   <Route path="/Contact" element={<Contact />} />
+                  <Route path="/screens/Signup" element={<Signup />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Router>
