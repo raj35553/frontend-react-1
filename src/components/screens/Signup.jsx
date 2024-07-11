@@ -1,24 +1,22 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 const Signup = () => {
 
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState(null);
-  const [password, setPassword] = useState("");
+  const [description, setDesc] = useState("");
+  const [age, setAge] = useState(null);
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "name") {
       setName(value);
-    } else if (name === "email") {
-      setEmail(value);
-    } else if (name === "phone") {
-      setPhone(value);
-    } else if (name === "password") {
-      setPassword(value);
-    }
+    } else if (name === "description") {
+      setDesc(value);
+    } else if (name === "age") {
+      setAge(value);
+    } 
     
   };
 
@@ -27,9 +25,9 @@ const Signup = () => {
 
     const payload = {
       name,
-      email,
-      phone,
-      password,
+      description,
+      age,
+     
     };
 
     try {
@@ -40,10 +38,13 @@ const Signup = () => {
 
       response
       .then((result) => {
-
+        const { message } = result.data;
+        console.log("register successfully");
+        setSuccessMessage(message);
+        clearForm();
       })
     } catch (error) {
-        showToast("Some Error Occured!", "error");
+        // showToast("Some Error Occured!", "error");
         console.log(error);
       }
     };
@@ -73,45 +74,33 @@ const Signup = () => {
 
 
             <div className="mb-3">
-                    <label for="email" className="form-label">
-                      Email address
+                    <label for="desc" className="form-label">
+                      Description
                     </label>
                     <input
-                      type="email"
+                      type="description"
                       className="form-control"
-                      name="email"
-                      placeholder="Enter your email"
+                      name="description"
+                      placeholder="Enter your Desc"
                       onChange={handleChange}
                     />
             </div>
             <div className="mb-3">
                     <label for="phone" className="form-label">
-                      Phone
+                      Age
                     </label>
                     <input
-                      type="phone"
+                      type="age"
                       className="form-control"
-                      name="phone"
-                      placeholder="Enter your phone"
+                      name="age"
+                      placeholder="Enter your age"
                       onChange={handleChange}
                     />
             </div>
-            <div className="mb-3">
-                    <label for="password" className="form-label">
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      name="password"
-                      placeholder="Create a password"
-                      onChange={handleChange}
-                    />
-            </div>
+            
             <button
                     type="submit"
                     className="btn btn-primary w-100"
-                    disabled={isButtonDisabled}
                   >
                     Sign Up
                   </button>

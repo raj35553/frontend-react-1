@@ -13,7 +13,9 @@ function Header() {
         </form>
     </div>
    <div className="d-flex justify-content-start align-items-center">
-       <Link to={"./screens/Signup"}>Sign in</Link>
+       <Link to={"./screens/Signup"}> <button type="button" className="btn btn-danger btn-sm me-2">
+                Sign in
+              </button></Link>
         
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
