@@ -4,7 +4,7 @@ const Signup = () => {
 
   const [name, setName] = useState("");
   const [description, setDesc] = useState("");
-  const [age, setAge] = useState(null);
+  const [age, setAge] = useState("");
  
 
   const handleChange = (e) => {
@@ -20,7 +20,20 @@ const Signup = () => {
     
   };
 
-  const handleSubmit = async (e) => {
+
+
+// const [values, setValues] = useState(
+//   {
+//     name: '',
+//     description: '',
+//     age: ''
+//   }
+// )
+// const handleChange = (e) => {
+//    setValues({...values, [e.target.name]:[e.target.value]})
+// }
+
+  const handleSubmit =  (e) => {
     e.preventDefault();
 
     const payload = {
@@ -29,30 +42,12 @@ const Signup = () => {
       age,
      
     };
+  axios.post('http://localhost:8000/api/register', payload)
+  .then(res => console.log("Registered Successfully!!"))
+  .catch(err => console.log(err));
+  };
 
-    try {
-    const response = axios.post(
-        "http://localhost:8000/api/register",
-        payload
-      );
-
-      response
-      .then((result) => {
-        const { message } = result.data;
-        console.log("register successfully");
-        setSuccessMessage(message);
-        clearForm();
-      })
-    } catch (error) {
-        // showToast("Some Error Occured!", "error");
-        console.log(error);
-      }
-    };
-
-    const clearForm = () => {
-        setName("");
-      };
-
+ 
 
   return (
     <div>
