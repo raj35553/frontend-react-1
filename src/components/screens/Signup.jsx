@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 const Signup = () => {
 
@@ -22,17 +22,6 @@ const Signup = () => {
 
 
 
-// const [values, setValues] = useState(
-//   {
-//     name: '',
-//     description: '',
-//     age: ''
-//   }
-// )
-// const handleChange = (e) => {
-//    setValues({...values, [e.target.name]:[e.target.value]})
-// }
-
   const handleSubmit =  (e) => {
     e.preventDefault();
 
@@ -42,12 +31,13 @@ const Signup = () => {
       age,
      
     };
-  axios.post('http://localhost:8000/api/register', payload)
+
+  axios.post('http://localhost:8000/register', payload)
   .then(res => console.log("Registered Successfully!!"))
   .catch(err => console.log(err));
   };
 
- 
+  
 
   return (
     <div>
@@ -78,6 +68,7 @@ const Signup = () => {
                       name="description"
                       placeholder="Enter your Desc"
                       onChange={handleChange}
+                      value={description}
                     />
             </div>
             <div className="mb-3">
@@ -90,6 +81,7 @@ const Signup = () => {
                       name="age"
                       placeholder="Enter your age"
                       onChange={handleChange}
+                      value={age}
                     />
             </div>
             
@@ -99,6 +91,9 @@ const Signup = () => {
                   >
                     Sign Up
                   </button>
+                  <p>Name: {name}</p>
+        <p>Description: {description}</p>
+        <p>Age: {age}</p>
         </form>
         
     </div>
